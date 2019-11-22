@@ -1,0 +1,43 @@
+
+
+// COPY AND PASTE THE FOLLOWING SQL STRING TO ADD IN PHP SECTION OF YOUR WEBPAGE 
+
+// SQL Query String...
+$strSQL="SELECT dbfield1, dbField2, dbField3, dbField4 FROM DBTableName; ";
+
+
+// COPY AND PASTE THE FOLLOWING PHP CODE TO TO ADD A TABLE TITLE BAR 
+
+print "<TABLE STYLE='font-family:Arial; font-size:12px;' WIDTH='100%' CELLPADDING='1' CELLSPACING='1' BORDER='0'>";
+print "<TR> ";
+print "<TD STYLE='font-family:Arial; font-size:12px; color: #ffffff; background-color: #000000;'> COLUMN A </TD>";
+print "<TD STYLE='font-family:Arial; font-size:12px; color: #ffffff; background-color: #000000;'> COLUMN B </TD>";
+print "<TD STYLE='font-family:Arial; font-size:12px; color: #ffffff; background-color: #000000;'> COLUMN C </TD>";
+print "<TD STYLE='font-family:Arial; font-size:12px; color: #ffffff; background-color: #000000;'> COLUMN D </TD>";
+print "</TR> ";
+
+// COPY AND PASTE THE FOLLOWING PHP CODE TO EXTRACT DATA FROM SQL TABLE AND DISPLAY AS A TABLE ROW 
+
+$result = mysql_query($strSQL);
+$rowresult = mysql_numrows($result);
+for ($i=0; $i<$rowresult; $i++)
+{
+     $column++;
+     $dbAlias1 = mysql_result($result,$i,"dbfield1");
+     $dbAlias2 = mysql_result($result,$i,"dbField2");
+     $dbAlias3 = mysql_result($result,$i,"dbField3");
+     $dbAlias4 = mysql_result($result,$i,"dbField4");
+     print "<TR STYLE='font-family:Arial; font-size:12px;'>";
+     print "<TD STYLE='font-family:Arial; font-size:12px;'> $dbAlias1 </TD>";
+     print "<TD STYLE='font-family:Arial; font-size:12px;'> $dbAlias2 </TD>";
+     print "<TD STYLE='font-family:Arial; font-size:12px;'> $dbAlias3 </TD>";
+     print "<TD STYLE='font-family:Arial; font-size:12px;'> $dbAlias4 </TD>";
+     print "</TR>";
+}
+
+
+// COPY AND PASTE THE FOLLOWING PHP CODE TO CLOSE TABLE 
+
+
+print "</TABLE>";
+
